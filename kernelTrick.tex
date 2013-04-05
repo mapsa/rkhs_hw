@@ -69,108 +69,9 @@
 \begin{document}
 \maketitle
 
-\section{Idea Intuitiva de Kernels}
-Supondremos que tenemos un conjunto con dos clases de objetos.
-Al llegar un nuevo objeto, interesa saber a cu\'al de
-las dos clases pertenece.
-Este tipo de problema se denomina
-{\bf problema de clasificaci\'on de objetos}. \cite{smola}.
+% % % IDEA INTUITIVA DE KERNELS % % %
 
-Para poder realizar dicha clasificaci\'on en el contexto de m\'aquinas de
-aprendizaje es necesario disponer de {\bf datos de entrenamiento}:
-
-$$
-(x_1,y_1),\,(x_2,y_2),\dots\,,\,(x_n,y_n)\ \in X\times\{-1,1\},
-$$
-
-\noindent donde $X$ es simplemente --por el momento-- un conjunto no vac\'\i o
-y $x\in X$ corresponde al dato de entrada (tambi\'en denominados casos,
-observaciones, patrones, etc.) e $y$ corresponde a la salida o etiqueta
-asociada al dato de entrada.
-
-
-Se espera que los algoritmos de m\'aquinas de  aprendizaje sean capaces de \emph{generalizar}, es decir,
-los algoritmos deben predecir la etiqueta $y \in \{-1,1\}$
-de los nuevos datos de entrada $x \in X$  mediante una funci\'on --o modelo-- constru\'ida
-a partir de los datos de entrenamiento.
-Para entender la idea, analicemos un ejemplo simple.
-Supongamos que $X=\mathbb{R}$  y que los valores los valores de $x\in X=\mathbb{R}$ que son
-mayores que $\pi$, por ejemplo, est\'an en la clase $y=+1$, y aquellos que son menores que $\pi$, est\'an en la clase $y=-1$.
-Cuando el sistema recibe una entrada $x=\sqrt{11}$, \'este generaliza y responde que esta entrada pertenece a la clase $y=+1$.
-
-
-La predicci\'on de la etiqueta $y\in\{-1,1\}$, debe ser de alguna manera
-\textbf{similar} a los datos de entrenamiento $(x,y)$.
-%
-Para medir la similitud entre datos, se pueden usar diversas funciones.
-En el caso de las etiquetas $y\in\{-1,1\}$, caracterizar la similitud es
-simple, ya que s\'olo pueden ocurrir dos situaciones:
-o bien las etiquetas son id\'enticas, por lo tanto similares,  o  bien son diferentes.
-%Con esto queremos decir, por el momento en t\'erminos muy generales, que
-%se escoge una etiqueta $y$ tal que $(x,y)$ es de alguna manera similar
-%(parecido, cercano) a los datos de entrenamiento.
-
-
-
-En el caso de los datos de entrada, la caracterizaci\'on de  su
-similitud es un poco m\'as compleja, y es un aspecto central en el campo de
-las llamadas m\'aquinas de aprendizaje.
-Para poder definir la similitud entre $x,x'\in X$, comenzemos introduciendo una medida de similitud de la forma:
-\begin{equation}
-\begin{array}{rcl}
-k: X\times X & \rightarrow & \mathbb{R} \\ 
-    (x,x')   & \rightarrow & k(x,x')\;, \\
-\end{array}
-\end{equation}
-donde $k$ es una funci\'on que recibe dos
-par\'ametros, $x$ y $x'$, ambos pertenecientes al conjunto de entradas
-$X$ y cuya salida es un valor real que caracteriza la similitud de ambos
-par\'ametros.
-Supondremos que $k$ es una funci\'on sim\'etrica,
-es decir, $k(x,x')= k(x',x)$ para todo $x,x'\in X$.
-Esta funci\'on $k$, {\em ser\'a\/} denominada {\bf kernel}.
-Para comprender la forma general de los kernels, es necesario que
-entendamos ciertos conceptos mat\'ematicos que estudiaremos en las siguientes
-secciones,
-as\'\i\ es que comenzaremos con un caso particular para llegar a entender su
-forma general.
-
-
-Una medida de similitud simple se podr\'ia definir mediante un \textbf{producto interno}
-\footnote{Revisar en Sec. \ref{sec:def} la definici\'on de producto
-interno a partir de formas hermitianas.}
-(tambi\'en conocido como producto escalar o producto punto).
-
-Por ejemplo, para los vectores $x,x'\in\mathbb{R}^n$, se define
-el \textbf{producto interno can\'onico} de la siguiente manera:
-\begin{equation}
-\langle\mathbf{x},\mathbf{x'}\rangle
-:= \sum \limits_{i=1}^{N} [\mathbf{x}]_i [\mathbf{x'}]_i 
-\end{equation}
-{\color{red} donde $[x]_i$, resp.  $[x']_i$, denota la $i$-\'esima
-componente del vector $x\in\mathbb{R}^N$, resp.  $x'\in\mathbb{R}^N$.
-Otro ejemplo de producto interno importante es:
-\begin{equation*}
-\langle f,g\rangle = \int_0^\infty f(t)\,\overline{g(t)}\;dt\,,\qquad
-f,g\in C([0,1],\mathbb{C})\,,
-\end{equation*}
-donde $C([0,1],\mathbb{C})$ denota la clase de las funciones
-continuas sobre el intervalo compacto $[0,1]$ con valores en
-$\mathbb{C}$.
-Obs\'ervese que $|\langle f,g\rangle|<\infty$ para todo
-$f,g\in C([0,1],\mathbb{C})$.
-{\bf ?`Por qu\'e?}}
-
-
-\begin{myremark}
-Aqu\'\i\ convendr\'\i a anotar los axiomas que debe satisfacer todo
-producto interno.
-{\bf Nota:}\ Estos axiomas se mencionan m\'as adelante en el texto.
-\end{myremark}
-
-\textcolor{blue}{Todav\'ia me falta llegar a decir: ``diremos que dos entradas
-$x,x'\in X$ son similares cuando ...''}
-
+\input{src/intro}
 
 % % % ESPACIOS DE HILBERT % % %
 \section{Espacios de Hilbert}
@@ -870,6 +771,11 @@ K\big( (\xi_1,\eta_1),\,(\xi_2,\eta_2) \big)
 &= \xi_1^2 + \eta_1^2 + \left(-2\xi_1^2-2\eta_1^2+1\right)^2 +
    \xi_2^2 + \eta_2^2 + \left(-2\xi_2^2-2\eta_2^2+1\right)^2
 \end{align*} 
+
+
+
+
+
 Una interesante tarea consistir\'\i a en averiguar cu\'ales son
 las curvas (algebraicas, por supuesto) de nivel del kernel $K$.
 Tal ejercicio deber\'\i a comenzar por graficar dichas curvas
