@@ -1,0 +1,139 @@
+
+\section{Definiciones}\label{sec:def}
+
+\begin{mydef}
+Sea $X$ un $\mathbb{K}$-espacio vectorial
+{\rm ($\mathbb{K}=\mathbb{C}$ o $\mathbb{R}$)}. 
+Una \textbf{forma Hermitiana} positiva definida (p.d.) sobre $X$
+es una aplicaci\'on:
+\begin{eqnarray*}
+\langle\cdot,\cdot\rangle: X\times X & \rightarrow & \mathbb{K} \\
+(x,y) & \rightarrow & \langle x,y \rangle\,,
+\end{eqnarray*}
+que posee las siguientes propiedades:
+\begin{enumerate}
+\item
+es aditiva con respecto al primer argumento:
+$$
+\langle x+x',y \rangle = \langle x,y \rangle + \langle x',y \rangle
+\quad \forall x,x',y \in X\,;
+$$
+\item
+la propiedad de homotecia:
+$\langle\alpha x,y\rangle = \alpha\langle x,y\rangle$ 
+para todo $\alpha\in\mathbb{K}$\,.
+\item
+la propiedad de anticonmutatividad:
+$\langle x,y\rangle=\overline{\langle y,x\rangle}$
+para todo $x,y\in X$
+\end{enumerate}
+\end{mydef}
+
+\smallskip\noindent
+De la definici\'on se desprende inmediatamente que la forma Hermitiana
+$\langle\cdot,\cdot\rangle$ posee las siguientes propiedades:
+\begin{enumerate}
+\item
+Es aditiva con respecto al segundo argumento:
+$\langle x,y+y'\rangle = \langle x,y+y'\rangle+\langle x,y+y\rangle$.
+\item
+Es sesquilineal {\color{red}\bf ??? ?`Qu\'e sigue? ???}
+\item
+{\color{red}\bf Empty item?}
+\end{enumerate}
+
+\smallskip\noindent
+Para $\mathbb{K}=\mathbb{R}$ las formas hermitianas son simplemente
+formas bilineales sim\'etricas: 
+$\langle x,y \rangle= \langle y,x \rangle$.
+Adem\'as:
+\begin{itemize}
+\item
+$\langle\cdot,\cdot\rangle$ es \textbf{positiva definida} ssi
+$\langle x,x\rangle > 0\quad\forall x\in X$ con $x\neq0$.
+\item
+$\langle\cdot,\cdot\rangle$ es \textbf{positiva semidefinida} ssi
+$\langle x,x\rangle\geq0\quad\forall x\in X$
+(i.e., se admite la posibilidad que exista $u\in X$, $u\neq0$,
+tal que $\langle u,u\rangle=0$).
+\item
+$\langle\cdot,\cdot \rangle$  es 
+\textbf{un producto interno o producto punto} ssi 
+$\langle\cdot,\cdot\rangle$ es \textbf{positiva definida}.
+\end{itemize}
+
+\medskip\noindent
+\textbf{Ejemplo.}
+Determinar un producto interno, distinto del producto punto can\'onico.
+
+\smallskip\noindent
+\emph{Desarrollo.}
+Sea $X=\mathbb{R}^2$, $A\in{\rm Mat}(2\times 2,\mathbb{R})$, y definamos:
+\begin{equation*}
+\varphi: \mathbb{R}^2 \rightarrow \mathbb{R}\,,\qquad
+(x,y)\mapsto \varphi(x,y):= x^{T}Ay\,,\quad x,y\in\mathbb{R}^2\,.
+\end{equation*}
+Entonces se tiene:
+\begin{align*}
+\varphi\quad\text{es positiva definida}\quad
+& \Leftrightarrow\quad \varphi(x,y)> 0\quad
+  \forall x,y\in\mathbb{R}^2\setminus\{0\} \\
+& \Leftrightarrow\quad x^{T}Ay> 0\quad
+  \forall x,y\in\mathbb{R}^2\setminus\{0\}\quad \\
+& \Leftrightarrow\quad 
+  A=\begin{bmatrix} a & b \\ c & d \end{bmatrix}\quad
+  \text{es positiva definida} \\
+& \Leftrightarrow\quad 
+  a>0\quad\text{y}\quad ad-bc>0\,.
+\end{align*}
+En general, una matriz $A\in{\rm Mat}(n\times n,\mathbb{R})$
+es positiva definida (p.d.) ssi sus subdeterminantes
+{\color{red}\bf principales} son positivos definidos.
+Por ejemplo, las matrices:
+$$
+I=\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+\quad\text{y}\quad 
+A=\begin{bmatrix} 1 & 3 \\ 0 & 2 \end{bmatrix}
+$$
+son p.d.
+Con ambas matrices se puede definir, entonces, un producto interno.
+Por ejemplo, recurriendo a la matriz $A$ se obtiene el producto interno
+sobre $\mathbb{R}^2$ dado por:
+$$
+\varphi(x,y) = \langle x,y\rangle := x^{T}Ay
+= \begin{bmatrix} x_1 & x_2 \end{bmatrix}
+  \begin{bmatrix} 1 & 3 \\ 0 & 2 \end{bmatrix}
+  \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}
+%% = \begin{bmatrix} x_1 & x_2 \end{bmatrix} 
+%%   \begin{bmatrix} y_1 + 3y_2 \\ 2 y_2 \end{bmatrix}
+= x_1y_1 + 3x_1 y_2 + 2 x_2 y_2\,.
+$$
+Las lectoras verificar\'an que esta forma satisface los axiomas de una
+forma bilineal p.d. o producto interno, en particular que:
+$$
+\|x\|_\varphi^2 := \varphi(x,x) = \langle x,x\rangle
+= x_1^2 + 3x_1 x_2 + 2 x_2^2\,,\quad (x_1,x_2)\in\mathbb{R}^2\,,
+$$
+es efectivamente una norma sobre $\mathbb{R}^2$.
+
+
+\begin{myremark}
+En los p\'arrafos precedentes correg\'\i\ varios errores.
+Sugiero pensar m\'as cuidadosamente los detalles de los textos
+matem\'aticos que escriban.
+Es muy f\'acil cometer errores si no se presta suficiente atenci\'on
+a los detalles.
+
+Omit\'\i\ el p\'arrafo que sigue, porque ya est\'a tratado en otra
+parte de este documento
+ 
+{\bf Definici\'on.}\quad{\em
+Un funcional de evaluaci\'on sobre el espacio de funciones $H$ es
+un funcional lineal $L_x: H \rightarrow \mathbb{R}$ que eval\'ua
+cada funci\'on en $H$ en el punto $x$:
+\begin{eqnarray*}
+L_x: H &\rightarrow &\mathbb{R} \\
+ f &\rightarrow & L_x(f):= f(x)
+\end{eqnarray*}}
+
+\end{myremark}
