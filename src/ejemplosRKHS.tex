@@ -1,0 +1,35 @@
+\section{Ejemplos de RKHS}
+
+\begin{description}
+\item[Kernel Lineal]
+$K(x,y) = \langle x,y \rangle$
+\begin{myremark}
+Aqu\'\i\ hay un problema: 
+$x,y\in X$.
+$X$ no tiene estructura de espacio de Hilbert, en general.
+Luego, $\langle x,y\rangle$ est\'a indefinido.
+\end{myremark}
+
+\item[Kernel Gaussiano]
+$K(x,y) = e^{-\frac{||x-y||^2}{\sigma^2}}, \sigma > 0$
+\begin{myremark}
+Aqu\'\i\ ocurre el mismo problema precedente: 
+se usa una norma $\|\cdot\|$ sobre $X$, en circunstancias que $X$
+no tiene, a priori, ninguna estructura.
+\end{myremark}
+
+\item[Kernel polinomial] 
+$K(x,y) = \big( \langle x,y\rangle + 1\big)^d$, $d\in\mathbb{N}$
+\begin{myremark}
+Ocurre el mismo problema ya se\~nalado: ahora se requiere una estructura
+de algebra sobre $X$.
+\end{myremark}
+\end{description}
+
+\begin{myremark}
+Los ejemplos de RKHS deben ser explicados mucho m\'as profundamente.
+Tal como est\'an no dicen nada.
+Aqu\'\i\ falta mucho trabajo todav\'\i a.
+\end{myremark}
+
+
