@@ -1,0 +1,71 @@
+
+\section{Espacios de Hilbert}
+
+\textcolor{blue}{yo definir\'ia primero espacios de Banach.}
+
+\begin{mydef}
+Un producto interno $\langle\cdot,\cdot\rangle$ sobre un espacio vectorial
+{\bf real} $X$ es una aplicaci\'on 
+$\langle\cdot,\cdot\rangle:X\times X\to\mathbb{R}$,
+que es lineal con respecto al primer y al segundo argumento
+y es tal que 
+$\langle\mathbf{x}, \mathbf{x}\rangle\geq0$ para todo $\mathbf{x}\in X$
+y $\langle\mathbf{x}, \mathbf{x}\rangle=0$ si y s\'olo si $\mathbf{x}=0$.
+\end{mydef}
+
+\begin{mydef}
+Un espacio de Hilbert $H$ sobre $\mathbb{R}$ es un espacio vectorial real
+equipado con un producto interno $\langle\cdot,\cdot\rangle$, tal que
+es completo con respecto a la norma
+$\|\mathbf{x}\|^{2}= \langle\mathbf{x},\mathbf{x}\rangle$,
+$\mathbf{x}\in H$.
+\end{mydef}
+
+Si bien todo espacio de Hilbert es un espacio de Banach, 
+no todo espacio de Banach es un espacio de Hilbert.
+
+\begin{mydef}
+Un espacio de Banach $(X,\|\cdot\|)$ es un espacio de Hilbert
+si y s\'olo si la norma $\|\cdot\|$ del espacio satisface la
+identidad del paralel\'ogramo:
+$$
+\|\mathbf{x}+\mathbf{y}\|^2+\|\mathbf{x}-\mathbf{y}\|^2
+= 2\|\mathbf{x}\|^2+2\|\mathbf{y}\|^2\quad
+\text{para todo}\quad \mathbf{x},\mathbf{y}\in X\,.
+$$
+\end{mydef}
+
+\begin{mydef}
+Un espacio pre-Hilbert es un espacio vectorial equipado con un producto
+interno o escalar.
+Por eso, los espacios pre-Hilbert se denominan tambi\'en espacios con
+producto interno.
+No se exige que los espacios pre-Hilbert sean {\bf completos}.
+Si adem\'as son completos, entonces se trata de espacios de Hilbert.
+\end{mydef}
+
+%Un espacio de Hilbert $H$ es un espacio vectorial equipado con un producto interno o producto escalar $\langle \cdot,\cdot \rangle$:
+
+%\begin{equation}
+%(H,\langle \cdot,\cdot \rangle) \Longrightarrow \text{ completo c/r  %}||\mathbf{x}||^2= \langle \mathbf{x},\mathbf{x} \rangle
+%\end{equation}
+
+
+%\begin{myteo}[de representación de Riesz]
+%Si $H$ es un espacio de Hilbert y $\varphi$ un funcional %lineal y continuo:
+%\begin{equation}
+%\varphi: H \rightarrow \mathbb{C} \Longrightarrow \exists! %y_{\varphi} \in H \qquad \forall x \in H: \qquad \varphi(x) %= \langle x,y_{\varphi}\rangle 
+%\end{equation}
+%$y_{\varphi}$ se le denomina el representante.
+%\end{myteo}
+
+
+\begin{myteo}[de representaci\'on de Riesz]
+Si $H$ es un espacio de Hilbert sobre un cuerpo escalar $\mathbb{K}$
+($\mathbb{K}$ puede ser $\mathbb{R}$ o $\mathbb{C}$ en este curso)
+y \ $\varphi: H \rightarrow \mathbb{K}$ un funcional lineal y continuo,
+entonces existe un \'unico $y_{\varphi}\in H$ tal que
+$\varphi(x)= \langle \mathbf{x},\mathbf{y}_{\varphi}\rangle$ para todo
+$\mathbf{x}\in H$.
+\end{myteo}
+
