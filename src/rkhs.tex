@@ -1,16 +1,14 @@
 \section{Espacios de Hilbert de Kernel Reproductor (RKHS)}
 
-
-%\begin{mydef}
-%Un espacio de Hilbert $H$ es rkhs si todos los funcionales de evaluación son %continuos. Los funcionales de evaluación son aquellos que mapean $f %\rightarrow f(x)$ donde $x \in X$ y $X$ es el espacio de entrada.
-%\end{mydef}
-
-Sea $H$ un espacio de Hilbert {\bf de funciones} (reales) definidas sobre
-un conjunto (que eventualmente puede tener m\'as estructura si conviene)
-no vac\'\i o $X$.
-De este modo el espacio de Hilbert $H$ que consideramos aqu\'\i\
-es un subespacio de $\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$:
+Sea $H$ un espacio de Hilbert {\bf de funciones} (reales) definidas
+sobre un conjunto no vac\'\i o $X$ (que eventualmente puede tener
+m\'as estructura si conviene). De este modo el espacio de Hilbert $H$
+que consideramos aqu\'\i\ es un subespacio de
+$\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$:
 $H\subset\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$.
+
+\textbf{Nota:}  $\mathfrak{F}(X,\mathbb{R})$ denota el conjunto de
+funciones que van de $X$ a $\mathbb{R}$.
 
 \begin{mydef}
 En este contexto se definen los funcionales de evaluaci\'on $E_x$,
@@ -23,6 +21,7 @@ E_x(f):=f(x)\,,\quad\forall f\in \mathbb{R}^X\,.
 $$
 \end{mydef}
 
+\input{src/HS-tikz.tex}
 
 
 \textbf{Nota:} En el contexto de las llamadas m\'aquinas de aprendizaje, $X$ es
@@ -36,13 +35,14 @@ todos los funcionales de evaluaci\'on $E_x:H\to\mathbb{K}$, $x\in X$,
 $E_x(f)=f(x)$ para todo $f\in H$, son continuos.
 \end{mydef}
 
-\subsection*{Los funcionales sobre un espacio de Hilbert, ?`son todos lineales y continuos?}
+\subsection{Demostraciones} 
+
+\begin{enumerate}[(a)]
+\item Los funcionales sobre un espacio de
+Hilbert, ?`son todos lineales y continuos?
 
 
-\textbf{Respuesta:} No. Sobre un espacio de Hilbert cualquiera siempre es posible definir funcionales no-lineales y funcionales no continuos
-
-
-:
+\textbf{Respuesta:} No. Sobre un espacio de Hilbert cualquiera siempre es posible definir funcionales no-lineales y funcionales no continuos:
 
 \begin{itemize}
 \item Sea $(H,\langle\cdot,\cdot\rangle)$ un espacio de Hilbert e $y\in H$
@@ -87,10 +87,13 @@ es lineal (pero es continuo).
 
 
 
-\subsection*{¿Son continuos todos los funcionales de evaluación sobre un espacio de Hilbert de funciones sobre un conjunto no vacío dado?}
+\item ¿Son continuos todos los funcionales de evaluación sobre un espacio de Hilbert de funciones sobre un conjunto no vacío dado?
 
 \textbf{Respuesta:}
 La respuesta tambi\'en es NO, como se discute m\'as adelante.
+
+\end{enumerate}
+
 
 %Ese mismo ejemplo se puede adaptar para exhibir un funcional lineal
 %no-continuo sobre un espacio de Hilbert.

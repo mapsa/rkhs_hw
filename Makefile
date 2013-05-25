@@ -5,7 +5,7 @@ all: pdf
 
 pdf: $(PDFFILES)
 
-%.pdf: %.tex
+%.pdf: %.tex src/*.tex
 	@rubber --pdf $<
 clean:
 	@rubber --clean --pdf $(TEXFILES:.tex=)
