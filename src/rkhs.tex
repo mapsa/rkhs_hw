@@ -1,54 +1,51 @@
 \section{Espacios de Hilbert de Kernel Reproductor (RKHS)}
 
 Sea $H$ un espacio de Hilbert {\bf de funciones} (reales) definidas
-sobre un conjunto no vac\'\i o $X$ (que eventualmente puede tener
-m\'as estructura si conviene). De este modo el espacio de Hilbert $H$
+sobre un conjunto no vacío. De este modo el espacio de Hilbert $H$
 que consideramos aqu\'\i\ es un subespacio de
 $\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$:
 $H\subset\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$.
+$\mathfrak{F}(X,\mathbb{R})$ denota el conjunto de funciones definidas
+desde $X$ a $\mathbb{R}$.
 
-\textbf{Nota:}  $\mathfrak{F}(X,\mathbb{R})$ denota el conjunto de
-funciones que van de $X$ a $\mathbb{R}$.
+\textbf{Nota:} $X$ eventualmente puede tener m\'as estructura si
+conviene. En el contexto de las llamadas máquinas de
+aprendizaje, $X$ es el espacio de las entradas a la m\'aquina y no
+necesariamente es un espacio vectorial.
 
 \begin{mydef}
-En este contexto se definen los funcionales de evaluaci\'on $E_x$,
+En este contexto se definen los funcionales de evaluaci\'on $L_x$,
 para cada punto fijo $x\in X$, sobre
 $\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$
 (o sobre $H$, si se prefiere) como:
 $$
-E_x: \mathbb{R}^X\to\mathbb{R}\,,\qquad
-E_x(f):=f(x)\,,\quad\forall f\in \mathbb{R}^X\,.
+L_x: \mathbb{R}^X\to\mathbb{R}\,,\qquad
+L_x(f):=f(x)\,,\quad\forall f\in \mathbb{R}^X\,.
 $$
 \end{mydef}
 
 \input{src/HS-tikz.tex}
 
-
-\textbf{Nota:} En el contexto de las llamadas m\'aquinas de aprendizaje, $X$ es
-el espacio de las entradas a la m\'aquina y no necesariamente es un espacio
-vectorial.
-
 \begin{mydef}
 Se dir\'a que un espacio de Hilbert $H$ es RKHS si y s\'olo si
 $H$ es un espacio de funciones sobre un conjunto no vac\'\i o $X$, donde
-todos los funcionales de evaluaci\'on $E_x:H\to\mathbb{K}$, $x\in X$, 
-$E_x(f)=f(x)$ para todo $f\in H$, son continuos.
+todos los funcionales de evaluaci\'on $L_x:H\to\mathbb{R}$, $x\in X$, 
+$L_x(f)=f(x)$ para todo $f\in H$, son continuos.
 \end{mydef}
 
 \subsection{Demostraciones} 
 
 \begin{enumerate}[(a)]
-\item Los funcionales sobre un espacio de
-Hilbert, ?`son todos lineales y continuos?
 
+\item ¿Son todos los funcionales sobre un espacio de Hilbert lineales
+y continuos?
 
-\textbf{Respuesta:} No. Sobre un espacio de Hilbert cualquiera siempre es posible definir funcionales no-lineales y funcionales no continuos:
+La respuesta es No. Sobre un espacio de Hilbert cualquiera siempre es posible definir funcionales no-lineales y funcionales no continuos:
 
-\begin{itemize}
-\item Sea $(H,\langle\cdot,\cdot\rangle)$ un espacio de Hilbert e $y\in H$
+Sea $(H,\langle\cdot,\cdot\rangle)$ un espacio de Hilbert e $y\in H$
 un elemento no nulo fijo.
 Entonces $\varphi: x\mapsto\langle x,y\rangle$, $x\in H$, es un funcional
-linea.
+lineal y contínuo.
 
 \textbf{Demo:} 
 \begin{eqnarray*}
@@ -58,9 +55,7 @@ linea.
 &=&   \alpha \varphi(x) +  \beta \varphi(z)
 \end{eqnarray*}
 
-
-
-\item $\varphi: x\mapsto(\langle x,y\rangle)^n$, $x\in H$, $1<n\in\mathbb{N}$
+Pero $\varphi: x\mapsto(\langle x,y\rangle)^n$, $x\in H$, $1<n\in\mathbb{N}$
 fijo, es un funcional no-lineal continuo sobre $H$.
 
 \textbf{Demo:} 
@@ -71,7 +66,7 @@ fijo, es un funcional no-lineal continuo sobre $H$.
 \end{eqnarray*}
 
 
-\item $\varphi: x\mapsto\exp(\langle x,y\rangle)$, $x\in H$, tampoco
+Otro contraejemplo es $\varphi: x\mapsto\exp(\langle x,y\rangle)$, $x\in H$, tampoco
 es lineal (pero es continuo).
 
 \textbf{Demo:} 
@@ -83,30 +78,27 @@ es lineal (pero es continuo).
 &=& \alpha \beta \varphi(x) \varphi(z) 
 \end{eqnarray*}
 
-\end{itemize}
 
-
-
-\item ¿Son continuos todos los funcionales de evaluación sobre un espacio de Hilbert de funciones sobre un conjunto no vacío dado?
+\item ¿Son continuos todos los funcionales de evaluación sobre un
+espacio de Hilbert de funciones sobre un conjunto no vacío dado?
 
 \textbf{Respuesta:}
 La respuesta tambi\'en es NO, como se discute m\'as adelante.
 
 \end{enumerate}
 
-
 %Ese mismo ejemplo se puede adaptar para exhibir un funcional lineal
 %no-continuo sobre un espacio de Hilbert.
 %{\color{red} Exh\'\i balo}
 
-Aqu\'\i\ consideramos un conjunto no vac\'\i o $X$, un espacio de
-Hilbert $H$ de funciones reales (para simplificar) sobre $X$,
-es decir, $H\subset\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$,
-y fijamos un elemento gen\'erico $x\in X$.
+Aquí consideramos un conjunto no vacío $X$, un espacio de Hilbert
+$H$ de funciones reales sobre $X$, es decir,
+$H\subset\mathfrak{F}(X,\mathbb{R})=\mathbb{R}^X$, y fijamos un
+elemento genérico $x\in X$.
 
 \smallskip
 Sobre este escenario consideramos el funcional de evaluaci\'on
-(tambi\'en gen\'erico)
+(tambi\'en gen\'erico):
 
 \begin{eqnarray*}
 L_x: H &\rightarrow &\mathbb{R} \\
