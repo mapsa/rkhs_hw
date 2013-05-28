@@ -1,0 +1,26 @@
+
+\setlength{\parskip}{5mm}
+\begin{center}
+\begin{tikzpicture}
+   \foreach \x in {1,2,3}{
+   \node[fill,circle,inner sep=5pt,scale=0.3] (d\x) at (0,\x) {};
+   \node[draw=none] at (0,\x+0.3) {$f_\x$};
+   }
+   \node[fit=(d1) (d2) (d3),ellipse,draw,minimum width=2cm] {}; 
+
+   \foreach \x[count=\xi] in {1,2,3}{
+   \node[fill,circle,inner sep=5pt,scale=0.3] (r\xi) at (3,\x) {};
+   \node[draw=none] at (3,\x+0.3) {$f_\x(x)$};
+   }
+   \node[fit=(r1) (r2) (r3),ellipse,draw,minimum width=2cm] {}; 
+
+    %\draw \boundellipse;
+    %\draw \secondboundellipse;
+    \node[anchor=south] at (current bounding box.north) {$L_x:
+    \mathbb{R}^X \to \mathbb{R}$};
+    \draw[-latex] (d1) -- (r1);
+    \draw[-latex] (d2) -- (r2);
+    \draw[-latex] (d3) -- (r3);
+\end{tikzpicture}
+\end{center}
+
