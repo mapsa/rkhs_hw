@@ -1,4 +1,33 @@
 \section{Definiciones}\label{sec:def}
+\begin{mydef}
+Un homomorfismo\footnote{No confundir con \emph{homeomorfismo}.} es una
+transformaci\'on que preserva la estructura entre dos estructuras algebraicas
+(como grupos, anillos o espacios vectoriales) \cite{wikiHomoM}.
+
+Por ejemplo, los n\'umeros reales son un \textbf{anillo}, el cual tiene
+adici\'on y multiplicaci\'on bien definidos. 
+El conjuto de todas las matrices de $2\times 2$, tambi\'en forman un anillo, y
+tiene la adici\'on de matrices y la multiplicaci\'on de matrices. 
+Si se define la sgte. funci\'on:
+
+$$f(r)=\begin{bmatrix}r & 0 \\ 0 &r\end{bmatrix}$$
+
+donde $r \in \mathbb{R}$. $f$ es un homomorfismo de anillos, dado que $f$ preserva la adici\'on:
+
+$$f(r+s) =  \begin{bmatrix}r+s & 0 \\ 0 &r+s\end{bmatrix} = \begin{bmatrix}r & 0 \\ 0 &r\end{bmatrix} + \begin{bmatrix}s & 0 \\ 0 &s\end{bmatrix} = f(r) + f(s)$$
+
+y preserva la multiplicac\'on:
+
+$$f(rs) = \begin{bmatrix}rs & 0 \\ 0 &rs\end{bmatrix} =  \begin{bmatrix}r & 0 \\ 0 &r\end{bmatrix} \begin{bmatrix}s & 0 \\ 0 &s\end{bmatrix} = f(r) f(s)$$
+
+ 
+
+% un homomorfismo biyectivo.
+
+%Un homomorfismo es una transformaci\'on que preserva la estructura entre dos estructuras algebraicas (como grupos, anillos, o espacios vectoriales)
+\end{mydef}
+
+
 
 \begin{mydef}
 Un isomorfismo entre dos espacios vectoriales $V$ y $W$ es una transformaci\'on  $f:V \rightarrow W$ tal que \cite{wikibooksIsom}:
@@ -13,16 +42,10 @@ $$f(rv)= r f(v)$$
 
 \end{enumerate}
 
-En forma m\'as general, un isomorfismo es un 
-\textbf{homomorfismo biyectivo}.
-Un homomorfismo  es una \textbf{relaci\'on de equivalencia} y una
-correspondencia uno a uno entre puntos en dos figuras geom\'etricas o espacios
-topol\'ogicos, y es continuo en ambas direcciones \cite{wolframHomoM}.
+En forma m\'as general, un isomorfismo es un \textbf{homomorfismo biyectivo},
+es decir, es una transformaci\'on biyectiva $f$, tal que $f$ y su inversa
+$f^{-1}$ son homomorfismos.
 
-
-% un homomorfismo biyectivo.
-
-%Un homomorfismo es una transformaci\'on que preserva la estructura entre dos estructuras algebraicas (como grupos, anillos, o espacios vectoriales)
 \end{mydef}
 
 
