@@ -69,3 +69,46 @@ $\varphi(x)= \langle \mathbf{x},\mathbf{y}_{\varphi}\rangle$ para todo
 $\mathbf{x}\in H$.
 \end{myteo}
 
+\subsection{Funcionales} 
+
+¿Son todos los \textbf{funcionales} sobre un espacio de Hilbert
+lineales y continuos?
+
+La respuesta es No. Sobre un espacio de Hilbert cualquiera siempre es
+posible definir funcionales no-lineales y funcionales no continuos:
+
+Sea $(H,\langle\cdot,\cdot\rangle)$ un espacio de Hilbert e $y\in H$
+un elemento no nulo fijo.
+Entonces $\varphi: x\mapsto\langle x,y\rangle$, $x\in H$, es un funcional
+lineal y contínuo.
+
+\textbf{Demo:} 
+\begin{eqnarray*}
+\varphi(\alpha x + \beta z) &=& \langle \alpha x + \beta z, y \rangle\\
+&=&  \langle \alpha x,y \rangle +   \langle \beta z,y \rangle \\
+&=&   \varphi(\alpha x) +  \varphi(\beta z) \\
+&=&   \alpha \varphi(x) +  \beta \varphi(z)
+\end{eqnarray*}
+
+Pero $\varphi: x\mapsto(\langle x,y\rangle)^n$, $x\in H$, $1<n\in\mathbb{N}$
+fijo, es un funcional no-lineal continuo sobre $H$.
+
+\textbf{Demo:} 
+\begin{eqnarray*}
+\varphi(\alpha x + \beta z) &=& (\langle \alpha x + \beta z, y \rangle)^n\\
+&=& (\alpha \varphi(x) +  \beta \varphi(z))^n \\
+&=& \displaystyle \sum_{k=0}^n  \frac{n!}{k!(n-k)!} (\alpha \varphi (x))^{n-k} (\beta \varphi(z)) ^k
+\end{eqnarray*}
+
+
+Otro contraejemplo es $\varphi: x\mapsto\exp(\langle x,y\rangle)$, $x\in H$, tampoco
+es lineal (pero es continuo).
+
+\textbf{Demo:} 
+\begin{eqnarray*}
+\varphi(\alpha x + \beta z) &=& \exp(\langle \alpha x + \beta z, y \rangle)\\
+&=& \exp(\alpha \varphi(x) +  \beta \varphi(z)) \\
+&=& \exp(\alpha \varphi(x))\exp(\beta \varphi(z)) \\
+&=& \alpha\exp(\varphi(x))\beta\exp(\varphi(z)) \\
+&=& \alpha \beta \varphi(x) \varphi(z) 
+\end{eqnarray*}
