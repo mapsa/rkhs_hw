@@ -135,7 +135,53 @@ definidas.
 %\smallskip\noindent$\bullet$\quad
 \item
 La relaci\'on ``$\sim$'' es una relaci\'on de equivalencia sobre
-$\mathbb{H}$. {\bf (!`Demu\'estrelo!)}
+$\mathcal{H}$. {\bf (!`Demu\'estrelo!)}
+
+Para que la relación ``$\sim$'' sea una relación de
+equivalencia debe cumplir lo siguiente:
+
+\begin{description}
+\item[Reflexividad] todo elemento de $\mathcal{H}$ debe estar
+relacionado consigo mismo, es decir:
+\begin{equation*}
+\forall f \in \mathcal{H}: f \sim f
+\end{equation*}
+
+se tiene entonces que:
+
+\begin{equation*}
+f \sim f \quad\Leftrightarrow\quad
+\int_{S(f,f)} |f(x)-f(x)|^2\,dx= \int_{S(f,f)} |0|^2\,dx=0\,,\qquad f\in\mathcal{H}\,,
+\end{equation*}
+
+\item[Simetría] se debe cumplir que:
+\begin{equation*}
+\forall f,g \in \mathcal{H}: f \sim g \Rightarrow g \sim f
+\end{equation*}
+
+dado que $f,g$ están definidas en $\mathbb{R}$, $|\cdot|$ denota el
+valor absoluto usual:
+
+\begin{equation*}
+f \sim g \Leftrightarrow
+\int_{S(f,g)} |f(x)-g(x)|^2\,dx=\int_{S(g,f)} |g(x)-f(x)|^2\,dx=0 
+\Leftrightarrow g \sim f 
+%\,,\qquad
+%f,g\in\mathcal{H}\,,
+\end{equation*}
+
+\item[Transitividad] se debe cumplir que:
+
+\begin{equation*}
+\forall f,g,z \in \mathcal{H}:\quad f \sim z \quad\wedge\quad z \sim g
+\Rightarrow f \sim g
+\end{equation*}
+se tiene que:
+
+{\color{red} Pendiente}
+
+
+\end{description}
 
 %\smallskip\noindent
 \item
@@ -146,15 +192,22 @@ H = \mathcal{H}/\!\!\sim\;
         con respecto a la r. de eq. $\sim$}\,.
 $$
 %\smallskip\noindent$\bullet$\quad
-TAREA: Asegurarse de entender bien qu\'e significa
-$H = \mathcal{H}/\!\!\sim$. \\
-Hint: Recuerde los cursos de Introducci\'on a
-la Inform\'atica y Computaci\'on Cient\'\i fica.
+%TAREA: Asegurarse de entender bien qu\'e significa
+%$H = \mathcal{H}/\!\!\sim$. \\
+%Hint: Recuerde los cursos de Introducci\'on a
+%la Inform\'atica y Computaci\'on Cient\'\i fica.
 
 %\smallskip\noindent
 \item
 $H$ es un espacio vectorial sobre $\mathbb{R}$.
 TAREA: Demu\'estrelo.
+
+
+
+
+
+
+
 
 %\smallskip\noindent
 \item
