@@ -177,6 +177,17 @@ P_4\mapsto Q_4 = (0,-1,-1)\,. &
 \draw [dotted] (0,-1,0) -- (0,-1,-1);
 \draw [dotted] (0,0,-1) -- (0,-1,-1);
 
+
+% idea of plane from http://tex.stackexchange.com/questions/104529/tikz-intersection-of-line-and-plane
+\draw [green] (1,1,-1)  -- (1,-2, 0.5) -- (-1,-1,1) -- (-1,2,-0.5) -- (1,1,-1);
+\node [right,green] at (-1,2,-0.5) {$E_{(1,1,2)}$};
+
+%\draw[fill,green] (-1,-1,1) circle [radius=0.05];
+%\node [below,green] at (-1,-1,1) {$(-1,-1,1)$};
+
+
+\draw [red] (0,0,0) -- (0,0,1);
+
 \end{tikzpicture}
 \end{center}
 
@@ -228,6 +239,44 @@ el exterior de $\Gamma$ en el semi-espacio que est\'a
 el interior de $\Gamma$ en el semi-espacio que est\'a
 ``por encima'' del plano $E_{(1,1,2)}$, y
 la circunferencia $\Gamma$ en el plano $E_{(1,1,2)}$.
+
+
+
+\begin{center}
+% from \url{http://tex.stackexchange.com/questions/61316/draw-a-plot-with-point}
+\begin{tikzpicture}[x=1cm,y=1cm]
+
+ \draw[latex-latex, thin, draw=gray] (-2,0)--(2,0) node [right] {$x$}; % l'axe des abscisses
+ \draw[latex-latex, thin, draw=gray] (0,-2)--(0,2) node [above] {$y$}; % l'axe des ordonnées
+
+
+\draw[fill] (1,0) circle [radius=0.05];
+\node [below] at (1,0) {$P_1$};
+
+
+\draw[fill] (0,1) circle [radius=0.05];
+\node [below] at (0,1) {$P_2$};
+
+\draw[fill] (-1,0) circle [radius=0.05];
+\node [below] at (-1,0) {$P_3$};
+
+\draw[fill] (0,-1) circle [radius=0.05];
+\node [below] at (0,-1) {$P_4$};
+
+\draw[fill,red] (0,0) circle [radius=0.05];
+\node [red, below] at (0,0) {$Z_0$};
+
+\draw [blue,thick] (1/8, 1/8) circle [radius=3/8];
+\node [blue, right] at (0.5,0.5) {$\Gamma$};
+
+% to ensure that the points are being properly centered:
+\draw [dotted, gray] (-3,-3) grid (3,3);
+%\node [red] at (0,0) {\textbullet};
+
+\end{tikzpicture}
+\end{center}
+
+
 
 \smallskip\noindent
 Utilizando la inmersi\'on $\Phi$ se observa que el kernel
