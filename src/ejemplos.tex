@@ -302,7 +302,99 @@ Una interesante tarea consistir\'\i a en averiguar cu\'ales son
 las curvas (algebraicas, por supuesto) de nivel del kernel $K$.
 Tal ejercicio deber\'\i a comenzar por graficar dichas curvas
 mediante Mathematica (TM), por ejemplo.
-No abordamos este {\em divertimento\/}, por ahora.
+No abordamos este {\em divertimento\/}, por ahora. \textcolor{red}{Check this!}
+
+
+
+\smallskip\noindent
+Si seguimos considerando la data:
+$$
+P_1=(1,0)\,,\quad
+P_2=(0,1)\,,\quad
+P_3=(-1,0)\,,\quad
+P_4=(0,-1)\,,\qquad
+Z_0=(0,0)\,.
+$$
+
+pero ahora, una aplicaci\'on $\Phi$ definida como:
+
+
+$$
+\Phi:\mathbb{R}^2\to\mathbb{R}^3 \cong 
+{\rm\bf Aff}(\mathbb{R}^2,\mathbb{R})\,,\qquad
+\Phi(\xi,\eta):= (\xi^2,2 \xi \eta, \eta^2)\,,\quad 
+(\xi,\eta)\in\mathbb{R}^2\,.
+$$
+
+Bajo la acci\'on de los datos $P_k, \ k=1, \ldots, 4$ y  $Z_0$ se transforman en:
+
+\begin{equation*}
+Z_0\mapsto W_0 = (0,0,0)\,,\qquad
+\begin{cases}
+P_1\mapsto Q_1 = (1,0,0)\,, & \\
+P_2\mapsto Q_2 = (0,0,1)\,, & \\
+P_3\mapsto Q_3 = (1,0,0)\,, & \\
+P_4\mapsto Q_4 = (0,0,1)\,. &
+\end{cases}
+\end{equation*}
+
+
+
+
+
+\begin{center}
+\begin{tikzpicture}[scale=2,tdplot_main_coords]
+
+\coordinate (O) at (0,0,0);
+
+\draw[thick] (-2,0,0) -- (2,0,0) node [anchor=north east] {$x$};
+\draw[thick] (0,-2,0) -- (0,2,0) node[anchor=north west]{$y$};
+\draw[thick] (0,0,-2) -- (0,0,2) node[anchor=south]{$z$};
+
+
+
+\draw[fill,blue] (1,0,0) circle [radius=0.05];
+\node [below,blue] at (1,0,0) {$Q_1=Q_3$};
+
+
+\draw[fill,blue] (0,0,1) circle [radius=0.05];
+\node [below,blue] at (0,0,1) {$Q_2=Q_4$};
+
+
+\draw[fill,red] (0,0,0) circle [radius=0.05];
+\node [below,red] at (0,0,0) {$W_0$};
+
+\draw[thick,green] (2,0,-1.5) -- (-1,0,1.5) ;
+\node [right,green] at (2,0,-1.5) {$E$};
+
+\end{tikzpicture}
+\end{center}
+
+% idea of plane from http://tex.stackexchange.com/questions/104529/tikz-intersection-of-line-and-plane
+%\draw [green] (1,1,-1)  -- (1,-2, 0.5) -- (-1,-1,1) -- (-1,2,-0.5) -- (1,1,-1);
+%\node [right,green] at (-1,2,-0.5) {$E_{(1,1,2)}$};
+
+%\draw[fill,green] (-1,-1,1) circle [radius=0.05];
+%\node [below,green] at (-1,-1,1) {$(-1,-1,1)$};
+
+
+Y consideremos el plano af\'in $E$ de $\mathbb{R}^3$ que viene
+dado por:
+
+$$
+E:\qquad
+[x,y,z]^T \begin{bmatrix} 2 \\  \frac{1}{A} \\ 2 \end{bmatrix}
+= 2x+\frac{y}{A} +2z = 1\,,\qquad 
+[x,y,z]^T\in\mathbb{R}^3 \cong {\rm\bf Aff}(\mathbb{R}^2,\mathbb{R})\,.
+$$
+
+$\frac{y}{A} \rightarrow 0$ cuando $A \rightarrow \infty$, por lo tanto,
+$E = 2x +2z=1$, es el plano que separa $Q_k,  \ k=1, \ldots, 4$, de
+$W_0$.
+
+
+
+
 
 \subsection{Ejemplo 2}
 
