@@ -3,6 +3,8 @@
 
 
 \subsection{Ejemplo 1}
+\subsubsection{\textbf{Caso 1}}
+
 En este ejemplo consideramos como espacio de entrada $X$ el
 {\em espacio de Hilbert\/} $\mathbb{R}^2$, con su estructura
 can\'onica de espacio con producto interno.
@@ -306,6 +308,7 @@ No abordamos este {\em divertimento\/}, por ahora. \textcolor{red}{Check this!}
 
 
 
+\subsubsection{\textbf{Caso 2}}
 \smallskip\noindent
 Si seguimos considerando la data:
 $$
@@ -322,7 +325,7 @@ pero ahora, una aplicaci\'on $\Phi$ definida como:
 $$
 \Phi:\mathbb{R}^2\to\mathbb{R}^3 \cong 
 {\rm\bf Aff}(\mathbb{R}^2,\mathbb{R})\,,\qquad
-\Phi(\xi,\eta):= (\xi^2,2 \xi \eta, \eta^2)\,,\quad 
+\Phi(\xi,\eta):= (\xi^2,\sqrt{2} \xi \eta, \eta^2)\,,\quad 
 (\xi,\eta)\in\mathbb{R}^2\,.
 $$
 
@@ -365,7 +368,7 @@ P_4\mapsto Q_4 = (0,0,1)\,. &
 \node [below,red] at (0,0,0) {$W_0$};
 
 \draw[thick,green] (2,0,-1.5) -- (-1,0,1.5) ;
-\node [right,green] at (2,0,-1.5) {$E$};
+\node [right,green] at (2,0,-1.5) {$E:2x + 2z = 1$};
 
 \end{tikzpicture}
 \end{center}
@@ -392,8 +395,26 @@ $\frac{y}{A} \rightarrow 0$ cuando $A \rightarrow \infty$, por lo tanto,
 $E = 2x +2z=1$, es el plano que separa $Q_k,  \ k=1, \ldots, 4$, de
 $W_0$.
 
+La inmersi\'on $\Phi$ permite determinar los puntos $(\xi, \eta) \in \mathbb{R}^2$ tales que:
 
+$$
+(\xi,\eta) \overset{\Phi}{\longmapsto} 
+(\xi^2, \sqrt{2} \xi \eta, \eta^2) = (x,y,z)\in E}\,.
+$$
 
+Dado que $E$ viene dado por $2x + 2z=1$, de la definic\'on  de $\Phi$
+
+\subsubsection{\textbf{Caso 3}}
+Ahora consideremos la siguiente función $\Phi$:
+
+$$
+\Phi:\mathbb{R}^2\to\mathbb{R}^3 \cong 
+{\rm\bf Aff}(\mathbb{R}^2,\mathbb{R})\,,\qquad
+\Phi(\xi,\eta):= (\xi^2,\sqrt{2} \xi \eta, \eta^2)\,,\quad 
+(\xi,\eta)\in\mathbb{R}^2\,.
+$$
+
+y el plano af\'in $E:2\xi^2 + \sqrt{2}\xi \eta = 1$
 
 
 \subsection{Ejemplo 2}
